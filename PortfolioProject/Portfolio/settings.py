@@ -25,7 +25,7 @@ SECRET_KEY = '&oknam#v05t#!2rxp2neme%z(@)df4m9&05248dwu8p1sxmz44'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['157.245.132.76']
 
 
 # Application definition
@@ -79,7 +79,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'portfoliodb',
-        'USER': 'postgres',
+        'USER': 'djangodbman',
         'PASSWORD': 'Hockey123!',
         'HOST': 'localhost',
         'PORT': '5432',
@@ -134,6 +134,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 try:
-    from local_settings import *
+    from .local_settings import *
 except ImportError:
     pass
