@@ -17,6 +17,8 @@ eggs/
 parts/
 sdist/
 var/
+bin/
+bin64/
 wheels/
 pip-wheel-metadata/
 share/python-wheels/
