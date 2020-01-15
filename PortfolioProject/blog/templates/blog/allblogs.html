@@ -1,13 +1,13 @@
-
 <!doctype html>
 <html lang="en">
+{% load static %}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Jekyll v3.8.6">
-  <title>Album example · Bootstrap</title>
+  <title>{{Adamm's Portfolio}}</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
 
@@ -40,7 +40,6 @@
       font-size: 3.5rem;
     }
   }
-
   img {
     display: block;
     max-height:250px;
@@ -49,7 +48,7 @@
   }
   </style>
   <!-- Custom styles for this template -->
-  <link href="album.css" rel="stylesheet">
+  <link href="album.css" rel="stylesheet"/>
 </head>
 <body>
   <header>
@@ -60,8 +59,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="#">Home</a>
-          <a class="nav-item nav-link" href="#">Resume</a>
+          <a class="nav-item nav-link" href="{% url 'home_page' %}">Home</a>
+          <a class="nav-item nav-link" href="{% static 'ANorgrenResume.pdf' %}">Resume</a>
+          <a class="nav-item nav-link" href="{% url 'all_blogs' %}">Portfolio</a>
           <a class="nav-item nav-link" href="#">Personal Information</a>
         </div>
       </div>
@@ -77,11 +77,11 @@
       <hr/>
         {% for blog in blogs.all %}
         <br />
-        <a href=""><h3>{{blog.title}}</a> </h3>
+        <a href="{% url 'detail' blog.id %}"><h3>{{blog.title}}</h3>
         {{blog.publication_date}}
         <hr />
         <img class="img-fluid" src="{{blog.image.url}}" height=200 width=300 />
-        <p>{{ blog.body}}</p>
+        <p>{{ blog.summary}}</p>
         <br />
         {% endfor %}
 

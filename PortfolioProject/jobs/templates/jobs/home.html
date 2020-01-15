@@ -1,6 +1,6 @@
-
 <!doctype html>
 <html lang="en">
+{% load static %}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -54,14 +54,15 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Adamm Norgren</a>
+      <a class="navbar-brand" href="{% url 'home_page' %}">Adamm Norgren</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="#">Home</a>
-          <a class="nav-item nav-link" href="#">Resume</a>
+          <a class="nav-item nav-link active" href="{% url 'home_page' %}">Home</a>
+          <a class="nav-item nav-link" href="{% static 'ANorgrenResume.pdf' %}">Resume</a>
+          <a class="nav-item nav-link" href="{% url 'all_blogs' %}">Portfolio</a>
           <a class="nav-item nav-link" href="#">Personal Information</a>
         </div>
       </div>
@@ -72,17 +73,18 @@
 
     <section class="jumbotron text-center">
       <div class="container">
-        <h1>Adamm Norgren's Portfolio</h1>
-        <p class="lead text-muted">Current Master's student at Northeastern University studying Computer Science</p>
-        <p>
-          <a href="mailto:norgren.adamm@gmail.com" class="btn btn-primary my-2">Email Me</a>
+        <h1>Adamm Norgren</h1>
+        <img src="{% static 'headshot.png' %}" class="rounded mx-auto d-block"/><br />
+        <p class="lead text-muted">Current Master's student at Northeastern University studying Computer Science
+          <br /><a href="mailto:norgren.adamm@gmail.com" class="btn btn-primary my-2">Email Me</a>
         </p>
       </div>
     </section>
 
     <div class="album py-5 bg-light">
       <div class="container">
-
+        <h2>My Work:</h2>
+        <br />
         <div class="row">
 
           {% for job in jobs.all %}
