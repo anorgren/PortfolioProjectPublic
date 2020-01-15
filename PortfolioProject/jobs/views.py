@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from .models import Job
 
+
 def home_page(request):
     """The view for the home page of the app"""
     jobs = Job.objects
