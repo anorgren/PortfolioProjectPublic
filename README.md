@@ -10,3 +10,6 @@ Other than the exclusion of that file, this code is the same as the production c
 - Postgres
 - gunicorn
 - Digital Ocean for hosting
+
+### Note
+This was a self study to build my Django skills so the code still needs to be refactored and does not include comments. For a better example of finished code, please view my RecipeAppAPI or PizzaProjectApi.
